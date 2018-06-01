@@ -17,24 +17,24 @@
 //! Generalization of a state machine for a consensus engine.
 //! This will define traits for the header, block, and state of a blockchain.
 
-extern crate ethereum_types;
+//extern crate ethereum_types;
 
-use ethereum_types::{H256, U256, Address};
+//use ethereum_types::{H256, U256, Address};
 
 /// A header. This contains important metadata about the block, as well as a
 /// "seal" that indicates validity to a consensus engine.
 pub trait Header {
 	/// Cryptographic hash of the header, excluding the seal.
-	fn bare_hash(&self) -> H256;
+//	fn bare_hash(&self) -> H256;
 
 	/// Cryptographic hash of the header, including the seal.
-	fn hash(&self) -> H256;
+//	fn hash(&self) -> H256;
 
 	/// Get a reference to the seal fields.
 	fn seal(&self) -> &[Vec<u8>];
 
 	/// The author of the header.
-	fn author(&self) -> &Address;
+//	fn author(&self) -> &Address;
 
 	/// The number of the header.
 	fn number(&self) -> u64;
@@ -144,8 +144,9 @@ pub trait LocalizedMachine<'a>: Sync + Send {
 pub trait WithBalances: Machine {
 	/// Get the balance, in base units, associated with an account.
 	/// Extracts data from the live block.
-	fn balance(&self, live: &Self::LiveBlock, address: &Address) -> Result<U256, Self::Error>;
-
+//	fn balance(&self, live: &Self::LiveBlock, address: &Address) -> Result<U256, Self::Error>;
+	fn balance(&self, live: &Self::LiveBlock,) -> Result<(),Self::Error>;
 	/// Increment the balance of an account in the state of the live block.
-	fn add_balance(&self, live: &mut Self::LiveBlock, address: &Address, amount: &U256) -> Result<(), Self::Error>;
+//	fn add_balance(&self, live: &mut Self::LiveBlock, address: &Address, amount: &U256) -> Result<(), Self::Error>;
+        fn add_balance(&self, live: &mut Self::LiveBlock,) -> Result<(), Self::Error>;
 }
