@@ -17,7 +17,7 @@ ethcore-io = { path = "../../util/io" }
 ethcore-logger = { path = "../../logger" }
 ethcore-miner = { path = "../../miner" }
 ethcore-transaction = { path = "../transaction" }
-ethereum-types = "0.3"
+ethereum-types = { path = "/code/primitives/ethereum-types" }
 ethjson = { path = "../../json" }
 ethkey = { path = "../../ethkey" }
 fetch = { path = "../../util/fetch" }

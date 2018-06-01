@@ -16,7 +16,7 @@
 
 //! VM errors module
 
-use trie;
+//use trie;
 use std::fmt;
 
 /// VM errors.
@@ -71,13 +71,13 @@ pub enum Error {
 	Reverted,
 }
 
-
+/*
 impl From<Box<trie::TrieError>> for Error {
 	fn from(err: Box<trie::TrieError>) -> Self {
 		Error::Internal(format!("Internal error: {}", err))
 	}
 }
-
+*/
 // impl From<wasm::RuntimeError> for Error {
 // 	fn from(err: wasm::RuntimeError) -> Self {
 // 		Error::Wasm(format!("Runtime error: {:?}", err))
